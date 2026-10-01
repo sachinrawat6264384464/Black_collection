@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Menu, MessageCircle, ShoppingBag } from "lucide-react";
+import Image from "next/image";
+import { Menu, MessageCircle } from "lucide-react";
 import { InstagramIcon } from "@/components/ui/Icons";
 import { STORE_CONFIG } from "@/config/store";
 import { openWhatsAppEnquiry } from "@/lib/whatsapp";
@@ -39,17 +40,24 @@ export const Navbar: React.FC = () => {
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           isScrolled
             ? "glass-nav py-3.5 shadow-2xl shadow-black/80"
-            : "bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5"
+            : "bg-gradient-to-b from-black/80 via-black/40 to-transparent py-4"
         }`}
       >
         <div className="w-full px-4 sm:px-8 lg:px-12 mx-auto flex items-center justify-between">
           {/* Logo */}
           <a
             href="#hero"
-            className="flex items-center gap-2.5 group focus:outline-none"
+            className="flex items-center gap-3 group focus:outline-none"
           >
-            <div className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-700/80 flex items-center justify-center text-amber-400 font-bold group-hover:border-amber-400/60 group-hover:scale-105 transition duration-300">
-              <ShoppingBag className="w-5 h-5 text-amber-400" />
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 shrink-0 overflow-hidden flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <Image
+                src="/logo.png"
+                alt="The Black Collection Dabra Logo"
+                width={48}
+                height={48}
+                className="object-contain w-full h-full"
+                priority
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-extrabold tracking-widest text-lg sm:text-xl text-white group-hover:text-amber-300 transition leading-tight">

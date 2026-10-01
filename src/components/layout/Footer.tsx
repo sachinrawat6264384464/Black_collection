@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import {
-  ShoppingBag,
   MessageCircle,
   Mail,
   MapPin,
@@ -23,9 +23,15 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-6">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <a href="#hero" className="flex items-center gap-2.5 group inline-flex">
-              <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-amber-400">
-                <ShoppingBag className="w-5 h-5" />
+            <a href="#hero" className="flex items-center gap-3 group inline-flex">
+              <div className="relative w-12 h-12 shrink-0 overflow-hidden flex items-center justify-center">
+                <Image
+                  src="/logo.png"
+                  alt="The Black Collection Dabra Logo"
+                  width={48}
+                  height={48}
+                  className="object-contain w-full h-full"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-extrabold tracking-widest text-xl text-white">
